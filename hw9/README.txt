@@ -1,0 +1,10 @@
+Traveling Salesperson
+by Nicole Niesen and Alex Richter
+
+In cities, in addition to the provided reorder and total_path_distance methods, we also included a get_number_of_cities public method that was helpful, and chose to include the operator<< and >> as friends so they could access private data members.
+We use reorder in the total_path_distance method to create a new cities member with the cities vector v_cities_ in the order given by the permutation argument. Then, using the distance formula (written as a free function) we calculated the total_distance between each consecutive city in the vector and finally added in the distance for traveling from the final city back to the first city. 
+
+The random_permutation function was written as a free function that created a vector of len with elements from 0 to len - 1 then used a standard library function that shuffles the elements into a new vector. Using that function we create a random_permutation with the length of the amount of cities read in from the provided file to the cities object, call the total_path_distance function and save the value if it is shorter than all of the previously calculated values. When a new best distance occurred we created a new cities object as well to output to the shortest file once the loop ran 1000000.
+
+We were having some trouble with the gnuplot instructions as they were written in the assignment, so we ran gnuplot with the two tmp files provided (speed and shortest) that then generated a .gif. The contents of these files were provided by Ariel in tutoring. 
+Our speed.gif shows a fairly steady decline in distances before finally finding the best route out of those tested; however, looking at shortest.gif, it is clear that random testing at n=1000000, is still not very effective at finding the true shortest route. 
